@@ -16,16 +16,17 @@ namespace Web_interface
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddMvc();// add mvc
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();//error list
-            app.UseStatusCodePages();//code page
+           app.UseStatusCodePages();//code page
             app.UseStaticFiles();//static files
-            app.UseMvcWithDefaultRoute();//url adress index.html
+          //  app.UseMvcWithDefaultRoute();//url adress index.html
             
         }
     }
