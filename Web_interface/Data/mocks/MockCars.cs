@@ -9,7 +9,26 @@ namespace Web_interface.Data.mocks
 {
     public class MockCars : IAllCars
     {
-        public IEnumerable<Car> Cars { get; set; }
+        private readonly ICarsCategory _categoryCars = new MockCategory();
+        public IEnumerable<Car> Cars
+        {
+            get
+            {
+                return new List<Car>
+                {
+                    new Car{name = "Tesla",
+                        shortDesc = "",
+                        longDesk="", img="",
+                        price=4500,
+                        isFavourite =true,
+                        available = true,
+                        Categoty = _categoryCars.AllCategories.First()}
+                };
+            }
+        }
+           
+
+
         public IEnumerable<Car> getFavCars { get ; set ; }
 
         public Car getObjectCar(int carId)

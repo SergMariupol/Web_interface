@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Web_interface.Data.Interfaces;
+using Web_interface.Data.mocks;
 
 namespace Web_interface
 {
@@ -16,6 +18,8 @@ namespace Web_interface
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IAllCars, MockCars>();//реализация интерфейсов
+            services.AddTransient<ICarsCategory, MockCategory>();//реализация интерфейсов
             services.AddMvc();// add mvc
             
         }
@@ -26,7 +30,7 @@ namespace Web_interface
             app.UseDeveloperExceptionPage();//error list
            app.UseStatusCodePages();//code page
             app.UseStaticFiles();//static files
-          //  app.UseMvcWithDefaultRoute();//url adress index.html
+            app.UseMvcWithDefaultRoute();//url adress index.html
             
         }
     }
