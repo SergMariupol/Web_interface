@@ -6,7 +6,7 @@ using Web_interface.Data.Models;
 
 namespace Web_interface.Data.Interfaces
 {
-    interface ICarsCategory
+   public interface ICarsCategory
     {
         IEnumerable<Category> AllCategories { get; }//read all category
     }

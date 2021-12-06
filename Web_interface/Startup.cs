@@ -21,7 +21,8 @@ namespace Web_interface
             services.AddTransient<IAllCars, MockCars>();//реализация интерфейсов
             services.AddTransient<ICarsCategory, MockCategory>();//реализация интерфейсов
             services.AddMvc();// add mvc
-            
+            services.AddRazorPages();
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,8 +31,21 @@ namespace Web_interface
             app.UseDeveloperExceptionPage();//error list
            app.UseStatusCodePages();//code page
             app.UseStaticFiles();//static files
-            app.UseMvcWithDefaultRoute();//url adress index.html
-            
+                                 //app.UseMvcWithDefaultRoute();//url adress index.html
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
         }
     }
 }
