@@ -18,11 +18,38 @@ namespace Web_interface.Data.mocks
                 {
                     new Car{name = "Tesla",
                         shortDesc = "",
-                        longDesk="", img="",
+                        longDesk="", 
+                        img="/img/Tesla.jpg",
                         price=4500,
                         isFavourite =true,
                         available = true,
-                        Categoty = _categoryCars.AllCategories.First()}
+                        Categoty = _categoryCars.AllCategories.First() },
+
+                    new Car{name = "Tesla_Truck",
+                        shortDesc = "",
+                        longDesk="", 
+                        img="/img/tesla_truck.jpg",
+                        price=4500,
+                        isFavourite =true,
+                        available = true,
+                        Categoty = _categoryCars.AllCategories.First() },
+
+                    new Car{name = "BMW",
+                        shortDesc = "",
+                        longDesk="", 
+                        img="/img/BMW.jpg",
+                        price=4500,
+                        isFavourite =true,
+                        available = true,
+                        Categoty = _categoryCars.AllCategories.Last() }
+
+
+
+
+
+
+
+
                 };
             }
         }
