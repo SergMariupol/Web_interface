@@ -16,6 +16,6 @@ namespace Web_interface.Data.Models
         public bool isFavourite { get; set; }
         public bool available { get; set; }
         public int categoryID { get; set; }
-        public virtual Category Categoty { get; set;}
+        public virtual Category Category { get; set;}
     }
 }

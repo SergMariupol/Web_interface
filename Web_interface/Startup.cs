@@ -57,6 +57,13 @@ namespace Web_interface
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
+            
+            
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                AppDbContent content = scope.ServiceProvider.GetRequiredService<AppDbContent>();
+                DBObjects.Initial(content);
+            }
         }
     }
 }

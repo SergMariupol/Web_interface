@@ -18,9 +18,9 @@ namespace Web_interface.Data.Repository
         }
 
 
-        public IEnumerable<Car> Cars => appDBContent.Car.Include(c =>c.Categoty)  ;
+        public IEnumerable<Car> Cars => appDBContent.Car.Include(c =>c.Category)  ;
 
-        public IEnumerable<Car> getFavCars => appDBContent.Car.Where(p => p.isFavourite).Include(c => c.Categoty);
+        public IEnumerable<Car> getFavCars => appDBContent.Car.Where(p => p.isFavourite).Include(c => c.Category);
 
         public Car getObjectCar(int carId) => appDBContent.Car.FirstOrDefault(p =>p.id==carId);
        

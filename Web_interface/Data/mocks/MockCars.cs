@@ -23,7 +23,7 @@ namespace Web_interface.Data.mocks
                         price=4500,
                         isFavourite =true,
                         available = true,
-                        Categoty = _categoryCars.AllCategories.First() },
+                        Category = _categoryCars.AllCategories.First() },
 
                     new Car{name = "Tesla_Truck",
                         shortDesc = "",
@@ -32,7 +32,7 @@ namespace Web_interface.Data.mocks
                         price=4500,
                         isFavourite =true,
                         available = true,
-                        Categoty = _categoryCars.AllCategories.First() },
+                        Category = _categoryCars.AllCategories.First() },
 
                     new Car{name = "BMW",
                         shortDesc = "",
@@ -41,7 +41,7 @@ namespace Web_interface.Data.mocks
                         price=4500,
                         isFavourite =true,
                         available = true,
-                        Categoty = _categoryCars.AllCategories.Last() }
+                        Category = _categoryCars.AllCategories.Last() }
 
 
 
