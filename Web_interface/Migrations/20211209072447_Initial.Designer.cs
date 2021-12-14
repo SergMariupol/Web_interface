@@ -9,8 +9,8 @@ using Web_interface.Data;
 namespace Web_interface.Migrations
 {
     [DbContext(typeof(AppDbContent))]
-    [Migration("20211207160717_Inital")]
-    partial class Inital
+    [Migration("20211209072447_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,13 +78,13 @@ namespace Web_interface.Migrations
 
             modelBuilder.Entity("Web_interface.Data.Models.Car", b =>
                 {
-                    b.HasOne("Web_interface.Data.Models.Category", "Categoty")
+                    b.HasOne("Web_interface.Data.Models.Category", "Category")
                         .WithMany("cars")
                         .HasForeignKey("categoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Categoty");
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Web_interface.Data.Models.Category", b =>

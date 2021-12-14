@@ -76,13 +76,13 @@ namespace Web_interface.Migrations
 
             modelBuilder.Entity("Web_interface.Data.Models.Car", b =>
                 {
-                    b.HasOne("Web_interface.Data.Models.Category", "Categoty")
+                    b.HasOne("Web_interface.Data.Models.Category", "Category")
                         .WithMany("cars")
                         .HasForeignKey("categoryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Categoty");
+                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Web_interface.Data.Models.Category", b =>

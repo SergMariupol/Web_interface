@@ -2,7 +2,7 @@
 
 namespace Web_interface.Migrations
 {
-    public partial class initia : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
