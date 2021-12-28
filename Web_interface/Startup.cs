@@ -11,7 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Web_interface.Data;
 using Web_interface.Data.Interfaces;
-using Web_interface.Data.mocks;
+using Web_interface.Data.Models;
 using Web_interface.Data.Repository;
 
 namespace Web_interface
@@ -31,7 +31,11 @@ namespace Web_interface
             services.AddDbContext<AppDbContent>(options => options.UseSqlServer(confstring.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAllCars, CarRepository>();//реализация интерфейсов
             services.AddTransient<ICarsCategory, CategoryRepository>();//реализация интерфейсов
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp =>ShopCar.GetCar(sp));
             services.AddMvc();// add mvc
+            services.AddMemoryCache();
+            services.AddSession();
             services.AddRazorPages();
             services.AddControllersWithViews();
         }
@@ -45,6 +49,7 @@ namespace Web_interface
                                  //app.UseMvcWithDefaultRoute();//url adress index.html
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
@@ -57,8 +62,8 @@ namespace Web_interface
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            
-            
+
+
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 AppDbContent content = scope.ServiceProvider.GetRequiredService<AppDbContent>();
