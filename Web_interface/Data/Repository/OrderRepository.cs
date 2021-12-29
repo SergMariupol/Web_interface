@@ -22,6 +22,7 @@ namespace Web_interface.Data.Repository
         {
             order.OrderTime = DateTime.Now;
             appDBContent.Order.Add(order);
+            appDBContent.SaveChanges();
 
             var items = ShopCar.ListShopItems;
 
@@ -29,10 +30,11 @@ namespace Web_interface.Data.Repository
             {
                 var orderdetail = new OrderDetail();
 
-                orderdetail.CarId = el.car.id;
-                orderdetail.OrderId = order.Id;
+                orderdetail.Carud = el.car.id;
+                orderdetail.Orderud = order.Id;
                 orderdetail.price = el.car.price;
-
+                orderdetail.car = el.car;
+                orderdetail.order = order;
                 appDBContent.OrderDetail.Add(orderdetail);
             }
             appDBContent.SaveChanges();
