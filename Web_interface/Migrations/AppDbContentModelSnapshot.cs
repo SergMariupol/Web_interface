@@ -107,7 +107,6 @@ namespace Web_interface.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-<<<<<<< HEAD
                 });
 
             modelBuilder.Entity("Web_interface.Data.Models.ShopCarItem", b =>
@@ -117,8 +116,6 @@ namespace Web_interface.Migrations
                         .HasForeignKey("carid");
 
                     b.Navigation("car");
-=======
->>>>>>> 1368f27cc8fc93078da6b26e65831e8e3af3a8e1
                 });
 
             modelBuilder.Entity("Web_interface.Data.Models.Category", b =>

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+
 using Web_interface.Data.Interfaces;
 using Web_interface.Data.Models;
 using Web_interface.Data.Repository;
@@ -32,7 +33,7 @@ namespace Web_interface.Controllers
         return View(obj);
         }
 
-        public RedirectToRouteResult AddToCar(int id)
+        public RedirectToActionResult AddToCar(int id)
         {
             var item = _carRep.Cars.FirstOrDefault(i => i.id == id);
             if (item != null)

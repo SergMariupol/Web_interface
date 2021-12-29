@@ -10,7 +10,7 @@ using Web_interface.Data;
 namespace Web_interface.Migrations
 {
     [DbContext(typeof(AppDbContent))]
-    [Migration("20211228155023_first")]
+    [Migration("20211229060325_first")]
     partial class first
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

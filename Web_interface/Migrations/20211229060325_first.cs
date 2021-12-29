@@ -2,11 +2,7 @@
 
 namespace Web_interface.Migrations
 {
-<<<<<<< HEAD:Web_interface/Migrations/20211228155023_first.cs
     public partial class first : Migration
-=======
-    public partial class Initial : Migration
->>>>>>> 1368f27cc8fc93078da6b26e65831e8e3af3a8e1:Web_interface/Migrations/20211209072447_Initial.cs
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
