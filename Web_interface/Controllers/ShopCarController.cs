@@ -35,7 +35,7 @@ namespace Web_interface.Controllers
             return View(obj);
         }
 
-        public RedirectToActionResult AddToCar(int id)
+        public RedirectToActionResult addtoCar(int id)
         {
             var item = _carRep.Cars.FirstOrDefault(i => i.id == id);
             if (item != null)

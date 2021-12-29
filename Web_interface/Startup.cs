@@ -31,7 +31,9 @@ namespace Web_interface
             services.AddDbContext<AppDbContent>(options => options.UseSqlServer(confstring.GetConnectionString("DefaultConnection")));
             services.AddTransient<IAllCars, CarRepository>();//реализация интерфейсов
             services.AddTransient<ICarsCategory, CategoryRepository>();//реализация интерфейсов
+            services.AddTransient<IAllOrders, OrderRepository>();//реализация интерфейсов
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+         
             services.AddScoped(sp =>ShopCar.GetCar(sp));
             services.AddMvc(options => options.EnableEndpointRouting = false);// add mvc
             services.AddMemoryCache();

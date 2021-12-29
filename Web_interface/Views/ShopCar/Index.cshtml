@@ -1,6 +1,6 @@
 ﻿@model ShopCarViewModel
 
-<div class ="container">
+<a class ="container">
     @foreach(var el in Model.shopCar.ListShopItems)
             {
                 <div class="alert-warning" mt-3>
@@ -10,6 +10,6 @@
                 </div>
             }
     <hr />
-    <div class="btn btn-danger" asp-controller="Order">Оплатить</div>
+    <a class="btn btn-danger" asp-controller="Order" asp-action="Checkout">Оплатить</a>
 </div>
 
