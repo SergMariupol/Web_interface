@@ -29,8 +29,10 @@ namespace Web_interface.Controllers
             var obj = new ShopCarViewModel
             {
                 shopCar = _shopcar
+
             };
-        return View(obj);
+            ViewBag.Title = "Корзина";
+            return View(obj);
         }
 
         public RedirectToActionResult AddToCar(int id)

@@ -33,35 +33,40 @@ namespace Web_interface
             services.AddTransient<ICarsCategory, CategoryRepository>();//реализация интерфейсов
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp =>ShopCar.GetCar(sp));
-            services.AddMvc();// add mvc
+            services.AddMvc(options => options.EnableEndpointRouting = false);// add mvc
             services.AddMemoryCache();
             services.AddSession();
-            services.AddRazorPages();
-            services.AddControllersWithViews();
+            //services.AddRazorPages();
+            //services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();//error list
-           app.UseStatusCodePages();//code page
+            app.UseStatusCodePages();//code page
             app.UseStaticFiles();//static files
                                  //app.UseMvcWithDefaultRoute();//url adress index.html
-            app.UseHttpsRedirection();
+           // app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSession();
+            app.UseMvcWithDefaultRoute();
+            //app.UseRouting();
 
-            app.UseRouting();
+            //app.UseAuthorization();
 
-            app.UseAuthorization();
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Home}/{action=Index}/{id?}");
+            //});
 
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(name: "default", template: "{controller = Home}/{ation=index}/{id?}");
+                routes.MapRoute(name: "categoryFilter", template: "{controller = Car}/{ation=index}/{category?}", defaults: new { Controller = "Car", acrion = "List" });
             });
-
 
 
             using (var scope = app.ApplicationServices.CreateScope())

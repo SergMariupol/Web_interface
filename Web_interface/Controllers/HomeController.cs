@@ -24,7 +24,7 @@ namespace Web_interface.Controllers
         {
             var homecars = new HomeViewModel { 
                 FavCars = _carRep.getFavCars};
-            
+            ViewBag.Title = "Лучшие";
             return View(homecars);
         }
     }
