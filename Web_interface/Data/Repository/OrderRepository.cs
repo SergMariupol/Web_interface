@@ -27,12 +27,13 @@ namespace Web_interface.Data.Repository
 
             foreach (var el in items)
             {
-                var orderdetail = new OrderDetail();
+                var orderdetail = new OrderDetail()
+                {
 
-                orderdetail.CarId = el.car.id;
-                orderdetail.OrderId = order.Id;
-                orderdetail.price = el.car.price;
-
+                    Card = el.car.id,
+                    Orderd = order.Id,
+                    price = el.car.price
+                };
                 appDBContent.OrderDetail.Add(orderdetail);
             }
             appDBContent.SaveChanges();
