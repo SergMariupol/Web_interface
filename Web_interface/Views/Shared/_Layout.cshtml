@@ -4,8 +4,13 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+
+
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" />
+
+
 </head>
 <body>
     <header>
@@ -20,7 +25,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" asp-controller="Cars" asp-action="List">Главная <span class="sr-only">(current)</span></a>
                     </li>
-                  
+
                     <li class="nav-item">
                         <a class="nav-link" href="/Cars/List/Fuel">Классика</a>
                     </li>
@@ -34,6 +39,11 @@
                         <a class="nav-link" href="/ShopCar/Index">Корзина</a>
                         <!--<a class="nav-link disabled" href="/ShopCar/Index">Корзина</a>-->
                     </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="OrderList" asp-action="ReadOrder">Заказы <span class="sr-only">(current)</span></a>
+                    </li>
+
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

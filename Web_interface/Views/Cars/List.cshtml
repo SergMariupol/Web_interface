@@ -2,12 +2,15 @@
     <h1 align="center " >Все автомобили</h1>
     <h3 align="center">@Model.currCategory</h3>
 
-    <div class="row mt-5 mb-2">
-        @{
-            foreach (Car car in Model.AllCars)
-            {
-                @Html.Partial("AllCars", car)
-            }
-        }
-    </div>
+    <div class="container">
 
+        <div class="row col-md">
+            @{
+                foreach (Car car in Model.AllCars)
+                {
+                    @Html.Partial("AllCars", car)
+                }
+            }
+        </div>
+
+    </div>

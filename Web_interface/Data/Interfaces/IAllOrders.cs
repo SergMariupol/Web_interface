@@ -9,5 +9,8 @@ namespace Web_interface.Data.Interfaces
     public interface IAllOrders
     {
         void CreateOrder(Order order);
+
+        IEnumerable<Order> OrderList { get; }
+        IEnumerable<OrderDetail> OrderDetailList { get; }
     }
 }

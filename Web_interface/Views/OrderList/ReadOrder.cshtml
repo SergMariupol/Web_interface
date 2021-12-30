@@ -1,0 +1,63 @@
+﻿
+<h1 align="center">Страница заказов</h1>
+
+
+        .block-left {
+            width: 50%;
+            height: 800px;
+            overflow: auto;
+            float: left;
+        }
+
+        .block-right {
+            width: 50%;
+            height: 800px;
+            overflow: auto;
+        }
+
+
+
+
+<div id="block-left">
+
+    <table border="1" align="center">
+        <caption class="align-bottom"> Таблица заказов</caption>
+        <tr>
+            <th>ID заказа</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Адрес</th>
+            <th>Телефон</th>
+            <th>Email</th>
+        </tr>
+        @{
+            foreach (Order order in Model.OrderList)
+            {
+
+                <tr align="center"><td>@order.Id</td><td>@order.Name</td><td>@order.surName</td><td>@order.adress</td><td>@order.phone</td><td>@order.mail</td></tr>
+
+            }
+        }
+    </table>
+</div>
+<div id="block-right">
+    <table border="1" align="center">
+        <caption class="align-bottom"> Таблица заказов</caption>
+        <tr>
+            <th>ID заказа</th>
+            <th>ID товара</th>
+            <th>Цена</th>
+
+        </tr>
+        @{
+            foreach (OrderDetail orderDetail in Model.OrderDetailList)
+            {
+
+                <tr align="center"><td>@orderDetail.Orderud</td><td>@orderDetail.Carud</td><td>@orderDetail.price</td></tr>
+
+            }
+        }
+    </table>
+</div>
+
+
