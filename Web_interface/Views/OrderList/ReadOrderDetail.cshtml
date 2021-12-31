@@ -1,0 +1,42 @@
+﻿
+<h1 align="center">Страница заказов</h1>
+&nbsp;
+<style>
+    .shadow {
+        background: #fc0;
+        /* Цвет фона */
+        /*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/ /* Параметры тени */
+        /*padding: 10px;*/
+        outline: 1px solid #666;
+        margin: 3px;
+    }
+
+    .maincontentrow {
+        background: #ff6a00;
+        display: inline-block;
+    }
+</style>
+<div id="right" class="shadow" style="height: 300px">
+    <h1> Детали заказов </h1>
+    &nbsp;
+    <table border="1" align="center">
+        <caption class="align-bottom"> Таблица заказов</caption>
+        <tr>
+            <th>ID заказа</th>
+            <th>ID товара</th>
+            <th>Цена</th>
+
+        </tr>
+        @{
+        foreach (OrderDetail orderDetail in Model.OrderDetailList)
+        {
+
+        <tr align="center"><td>@orderDetail.Orderud</td><td>@orderDetail.Carud</td><td>@orderDetail.price</td></tr>
+
+        }
+        }
+    </table>
+</div>
+
+
+

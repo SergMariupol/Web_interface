@@ -22,6 +22,7 @@ namespace Web_interface.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public IActionResult Checkout(Order order)
         {
