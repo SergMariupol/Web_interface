@@ -33,12 +33,13 @@
             <th>Адрес</th>
             <th>Телефон</th>
             <th>Email</th>
+            <th>Cумма</th>
         </tr>
         @{
             foreach (Order order in Model.OrderList)
             {
 
-                <tr align="center"><td><a href= "/OrderList/ReadOrderDetail/@order.Id">@order.Id</a></td><td>@order.Name</td><td>@order.surName</td><td>@order.adress</td><td>@order.phone</td><td>@order.mail</td></tr>
+                <tr align="center"><td><a href= "/OrderList/ReadOrderDetail/@order.Id">@order.Id</a></td><td>@order.Name</td><td>@order.surName</td><td>@order.adress</td><td>@order.phone</td><td>@order.mail</td><td>@order.sum</td></tr>
 
             }
         }

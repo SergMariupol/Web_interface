@@ -10,8 +10,8 @@ using Web_interface.Data;
 namespace Web_interface.Migrations
 {
     [DbContext(typeof(AppDbContent))]
-    [Migration("20211230072725_fist")]
-    partial class fist
+    [Migration("20211231092444_3")]
+    partial class _3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -107,6 +107,9 @@ namespace Web_interface.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<double>("sum")
+                        .HasColumnType("float");
+
                     b.Property<string>("surName")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -126,6 +129,9 @@ namespace Web_interface.Migrations
 
                     b.Property<int>("Carud")
                         .HasColumnType("int");
+
+                    b.Property<string>("NameGoods")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Orderud")
                         .HasColumnType("int");

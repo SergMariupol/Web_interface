@@ -11,6 +11,10 @@ namespace Web_interface.Data.Models
     {
         [BindNever]
         public int  Id { get; set; }
+        [BindNever]
+        public double sum { get; set; }
+
+
         [Display(Name = "Введите имя")]
         [StringLength(20)]
         [Required(ErrorMessage ="Длина имени не менее 5 символов")]

@@ -17,24 +17,33 @@
     }
 </style>
 <div id="right" class="shadow" style="height: 300px">
-    <h1> Детали заказов </h1>
+    <h1 align="center"> Детали заказов </h1>
     &nbsp;
     <table border="1" align="center">
         <caption class="align-bottom"> Таблица заказов</caption>
         <tr>
             <th>ID заказа</th>
             <th>ID товара</th>
+            <th>Название товара</th>
             <th>Цена</th>
 
         </tr>
         @{
+
         foreach (OrderDetail orderDetail in Model.OrderDetailList)
         {
 
-        <tr align="center"><td>@orderDetail.Orderud</td><td>@orderDetail.Carud</td><td>@orderDetail.price</td></tr>
+        <tr align="center"><td>@orderDetail.Orderud</td><td>@orderDetail.Carud</td><td>@orderDetail.NameGoods</td><td>@orderDetail.price</td></tr>
 
         }
+
         }
+       
+   
+     
+
+
+
     </table>
 </div>
 

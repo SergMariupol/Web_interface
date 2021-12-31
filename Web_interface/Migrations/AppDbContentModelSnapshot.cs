@@ -105,6 +105,9 @@ namespace Web_interface.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<double>("sum")
+                        .HasColumnType("float");
+
                     b.Property<string>("surName")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -124,6 +127,9 @@ namespace Web_interface.Migrations
 
                     b.Property<int>("Carud")
                         .HasColumnType("int");
+
+                    b.Property<string>("NameGoods")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Orderud")
                         .HasColumnType("int");

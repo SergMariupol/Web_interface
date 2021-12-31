@@ -22,23 +22,43 @@ namespace Web_interface.Data.Repository
         public void CreateOrder(Order order)
         {
             order.OrderTime = DateTime.Now;
+            var items = ShopCar.ListShopItems;
+            double sum = 0.0;
+            foreach (var el in items)
+            {
+                sum += Convert.ToDouble(el.car.price);
+            }
+
+            order.sum = sum;
+
+
             appDBContent.Order.Add(order);
             appDBContent.SaveChanges();
 
-            var items = ShopCar.ListShopItems;
+
+
+
+
+            
 
             foreach (var el in items)
             {
                 var orderdetail = new OrderDetail();
 
                 orderdetail.Carud = el.car.id;
+                orderdetail.NameGoods = el.car.name;
                 orderdetail.Orderud = order.Id;
                 orderdetail.price = el.car.price;
                 orderdetail.car = el.car;
                 orderdetail.order = order;
-
                 appDBContent.OrderDetail.Add(orderdetail);
+
+                
             }
+
+       
+
+
 
             appDBContent.SaveChanges();
         }

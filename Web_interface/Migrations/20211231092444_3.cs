@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Web_interface.Migrations
 {
-    public partial class fist : Migration
+    public partial class _3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,6 +27,7 @@ namespace Web_interface.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    sum = table.Column<double>(type: "float", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     surName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     adress = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
@@ -74,6 +75,7 @@ namespace Web_interface.Migrations
                     Orderud = table.Column<int>(type: "int", nullable: false),
                     Carud = table.Column<int>(type: "int", nullable: false),
                     price = table.Column<long>(type: "bigint", nullable: false),
+                    NameGoods = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     carid = table.Column<int>(type: "int", nullable: true),
                     orderId = table.Column<int>(type: "int", nullable: true)
                 },
