@@ -47,7 +47,7 @@ namespace Web_interface
         {
             app.UseDeveloperExceptionPage();//error list
             app.UseStatusCodePages();//code page
-            app.UseStaticFiles();//static files
+           // app.UseStaticFiles();//static files
                                  //app.UseMvcWithDefaultRoute();//url adress index.html
            // app.UseHttpsRedirection();
             app.UseStaticFiles();

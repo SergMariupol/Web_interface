@@ -26,11 +26,12 @@ namespace Web_interface.Controllers
         public ViewResult List(string category)
         {
             string _category = category;
-            IEnumerable<Car> cars = null; ;
+            IEnumerable<Car> cars = null;
             string currCategory = "";
+
             if (string.IsNullOrEmpty(category))
             {
-                cars = _allCars.Cars.OrderBy(i => i.id);
+                cars = _allCars.Cars.OrderBy(i => i.Category.categoryName);
                 ViewBag.Title = "Автомобили";
             }
             else
