@@ -11,7 +11,7 @@ namespace Web_interface.Controllers
 {
     public class RegisterController : Controller
     {
-        private readonly IAllOrders _allOrders;
+        //private readonly IAllOrders _allOrders;
 
         //public OrderListController(IAllOrders allOrders)
         //{
@@ -24,26 +24,48 @@ namespace Web_interface.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult RegisterWindow(Register register)
+        {
 
 
-       //// [HttpPost]
-       // public ActionResult ReadOrderDetail(int id)
-       // {
-       //     IEnumerable<OrderDetail> OrderDetails;
-       //     ViewBag.Title = "Заказы";
 
+
+            return RedirectToAction("Complete");
+        }
           
-
-       //     OrderDetails = _allOrders.OrderDetailList.Where(i => i.Orderud == id);
-
-       //    // OrderDetails = from OrderDetail in _allOrders.OrderDetailList where OrderDetail.Orderud == 1 select OrderDetail;
-
-
-       //     OrderListViewModel objOrderDetails = new OrderListViewModel();
-
-       //     objOrderDetails.OrderDetailList = OrderDetails;
-          
-       //     return View(objOrderDetails);
-       // }
+    
+    public IActionResult Complete()
+    {
+        ViewBag.Message = "Регистрация успешна";
+        return View();
     }
-}
+
+        public IActionResult RegisterWindowRegister()
+        {
+            return View();
+        }
+    }
+
+
+        //// [HttpPost]
+        // public ActionResult ReadOrderDetail(int id)
+        // {
+        //     IEnumerable<OrderDetail> OrderDetails;
+        //     ViewBag.Title = "Заказы";
+
+
+
+        //     OrderDetails = _allOrders.OrderDetailList.Where(i => i.Orderud == id);
+
+        //    // OrderDetails = from OrderDetail in _allOrders.OrderDetailList where OrderDetail.Orderud == 1 select OrderDetail;
+
+
+        //     OrderListViewModel objOrderDetails = new OrderListViewModel();
+
+        //     objOrderDetails.OrderDetailList = OrderDetails;
+
+        //     return View(objOrderDetails);
+        // }
+    }
+
