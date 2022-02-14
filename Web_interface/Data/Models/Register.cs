@@ -11,14 +11,13 @@ namespace Web_interface.Data.Models
     {
         [BindNever]
         public int  Id { get; set; }
-        [BindNever]
-        public double sum { get; set; }
+        [BindNever]        
 
 
         [Display(Name = "Введите логин")]
         [StringLength(20)]
         [Required(ErrorMessage = "Длина имени не менее 5 символов")]
-        public string Login { get; set; }
+        public string LoginUser { get; set; }
 
 
         [Display(Name = "Введите пароль")]
@@ -34,6 +33,19 @@ namespace Web_interface.Data.Models
         public string Password2 { get; set; }
 
 
-       
+        [Display(Name = "Введите вашу электронную почту")]
+        [StringLength(20)]
+        [Required(ErrorMessage = "Длина адреса не менее 5 символов")]
+        public string Mail { get; set; }
+
+        
+        [Display(Name = "Введите ваш номер телефона")]
+        [StringLength(20)]
+        [Required(ErrorMessage = "Длина адреса не менее 5 символов")]
+        public string Phone { get; set; }
+
+
+
+
     }
 }

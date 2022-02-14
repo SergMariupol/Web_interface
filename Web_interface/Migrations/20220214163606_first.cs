@@ -41,6 +41,23 @@ namespace Web_interface.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Register",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    LoginUser = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Password1 = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Password2 = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Mail = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Register", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Car",
                 columns: table => new
                 {
@@ -142,6 +159,9 @@ namespace Web_interface.Migrations
         {
             migrationBuilder.DropTable(
                 name: "OrderDetail");
+
+            migrationBuilder.DropTable(
+                name: "Register");
 
             migrationBuilder.DropTable(
                 name: "ShopCarItem");

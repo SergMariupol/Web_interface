@@ -18,7 +18,7 @@ namespace Web_interface.Data
         public DbSet<ShopCarItem> ShopCarItem { get; set; }
         public DbSet<Order> Order{ get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }
-
+        public DbSet<Register> Register { get; set; }
 
     }
 }
