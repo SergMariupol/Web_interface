@@ -11,7 +11,7 @@ namespace Web_interface.Data.Models
     {
         [BindNever]
         public int  Id { get; set; }
-        [BindNever]        
+       // [BindNever]        
 
 
         [Display(Name = "Введите логин")]

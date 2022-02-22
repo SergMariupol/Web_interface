@@ -19,6 +19,9 @@ namespace Web_interface.Data
         public DbSet<Order> Order{ get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }
         public DbSet<Register> Register { get; set; }
+        public DbSet<Register> Project { get; set; }
+        public DbSet<Register> Task { get; set; }
+        public DbSet<Register> TaskComments { get; set; }
 
     }
 }
